@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gérer les Utilisateurs</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Enregistrer un utilisateur</h2>
+        <form action="/enregistrerUtilisateur" method="post">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="motDePasse">Mot de passe:</label>
+                <input type="password" class="form-control" id="motDePasse" name="motDePasse" required>
+            </div>
+            <div class="form-group">
+                <label for="typeUtilisateur">Type d'utilisateur:</label>
+                <input type="text" class="form-control" id="typeUtilisateur" name="typeUtilisateur" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+
+        <h2 class="mt-5">Liste des utilisateurs</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Type d'utilisateur</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% utilisateurs.forEach(utilisateur => { %>
+                    <tr>
+                        <td><%= utilisateur.id %></td>
+                        <td><%= utilisateur.nom %></td>
+                        <td><%= utilisateur.email %></td>
+                        <td><%= utilisateur.typeUtilisateur %></td>
+                        <td>
+                            <a href="/modifierUtilisateur/<%= utilisateur.id %>" class="btn btn-warning btn-sm">Modifier</a>
+                            <a href="/supprimerUtilisateur/<%= utilisateur.id %>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">Supprimer</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

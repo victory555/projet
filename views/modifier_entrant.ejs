@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Courrier Entrant</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Modifier le courrier entrant</h2>
+        <form method="post" action="/entrant/edit/<%= courrier.id %>">
+            <div class="form-group">
+                <label>Sujet:</label>
+                <input type="text" name="sujet" class="form-control" value="<%= courrier.sujet %>" required>
+            </div>
+            <div class="form-group">
+                <label>Date de Réception:</label>
+                <input type="date" name="dateReception" class="form-control" value="<%= courrier.dateReception %>" required>
+            </div>
+            <div class="form-group">
+                <label>Contenu:</label>
+                <textarea name="contenu" class="form-control" required><%= courrier.contenu %></textarea>
+            </div>
+            <div class="form-group">
+                <label>Expéditeur:</label>
+                <input type="text" name="expediteur" class="form-control" value="<%= courrier.expediteur %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

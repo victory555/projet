@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courriers Sortants</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Liste des courriers sortants</h2>
+        <a href="/sortant/add" class="btn btn-primary">Ajouter un courrier sortant</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Sujet</th>
+                    <th>Date d'Envoi</th>
+                    <th>Destinataire</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courriers.forEach(courrier => { %>
+                    <tr>
+                        <td><%= courrier.id %></td>
+                        <td><%= courrier.sujet %></td>
+                        <td><%= courrier.dateEnvoi %></td>
+                        <td><%= courrier.destinataire %></td>
+                        <td>
+                            <a href="/sortant/edit/<%= courrier.id %>" class="btn btn-warning">Modifier</a>
+                            <a href="/sortant/delete/<%= courrier.id %>" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

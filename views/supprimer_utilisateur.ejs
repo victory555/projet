@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer Utilisateur</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Supprimer l'utilisateur</h2>
+        <p>Êtes-vous sûr de vouloir supprimer cet utilisateur?</p>
+        <form method="post" action="/utilisateur/delete/<%= utilisateur.id %>">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+            <a href="/utilisateur" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

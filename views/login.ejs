@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Connexion</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-6 offset-3" style="  background-color: rgb(235, 224, 212);">
+                    <h2 class="mt-5 text-danger">Connexion</h2>
+                    <p class="user"><span class="bg-success rounded-pill logo fas fa-user"></span></p>
+                    <h4 class="text-danger">Bienvenue entrez votre email et votre mot de passe. </h4>
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control rounded-pill" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motDePasse">Mot de passe :</label>
+                            <input type="password" class="form-control rounded-pill" id="motDePasse" name="motDePasse" required>
+                        </div>
+                        <button type="submit" class="btn btn-success form-control my-3  rounded-pill">Se connecter <span class="mx-2 fas fa-arrow-right"></span></button>
+                        <p style="font-size: x-small; text-align:right; " class="bg-light">réalisé par ismael</p>
+                
+                    </form>
+                </div>
+                
+             </div>
+    
+
+        </div>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

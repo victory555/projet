@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courriers Entrants</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Liste des courriers entrants</h2>
+        <a href="/entrant/add" class="btn btn-primary">Ajouter un courrier entrant</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Sujet</th>
+                    <th>Date de Réception</th>
+                    <th>Expéditeur</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courriers.forEach(courrier => { %>
+                    <tr>
+                        <td><%= courrier.id %></td>
+                        <td><%= courrier.sujet %></td>
+                        <td><%= courrier.dateReception %></td>
+                        <td><%= courrier.expediteur %></td>
+                        <td>
+                            <a href="/entrant/edit/<%= courrier.id %>" class="btn btn-warning">Modifier</a>
+                            <a href="/entrant/delete/<%= courrier.id %>" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

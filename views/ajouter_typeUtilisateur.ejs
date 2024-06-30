@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter Type Utilisateur</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container" style="  background-color: rgb(235, 224, 212);">
+        <h2>Ajouter un type d'utilisateur</h2>
+        <form method="post" action="/typeUtilisateur/add">
+            <div class="form-group">
+                <label>Libellé:</label>
+                <input type="text" name="libelle" class="form-control rounded-pill" required>
+            </div>
+            <button type="submit" class="my-3 btn btn-success rounded-pill form-control">Ajouter <span class="fas fa-plus"></span></button>
+        </form>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Libellé</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% typesUtilisateurs.forEach(typeUtilisateur => { %>
+                        <tr>
+                            <td><%= typeUtilisateur.id %></td>
+                            <td><%= typeUtilisateur.libelle %></td>
+                            <td>
+                                <a href="/typeUtilisateur/edit/<%= typeUtilisateur.id %>" class="btn btn-warning">Modifier</a>
+                                <a href="/typeUtilisateur/delete/<%= typeUtilisateur.id %>" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

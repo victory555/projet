@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Type d'Utilisateur</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Modifier le type d'utilisateur</h2>
+        <form method="post" action="/typeUtilisateur/edit/<%= typeUtilisateur.id %>">
+            <div class="form-group">
+                <label>Libelle:</label>
+                <input type="text" name="libelle" class="form-control" value="<%= typeUtilisateur.libelle %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

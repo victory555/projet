@@ -1,0 +1,35 @@
+body {
+  padding-top: 20px;
+  background-color: rgb(166, 9, 9);
+}
+.login{
+  background-color: rgb(10, 123, 154);
+}
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-right: 5px;
+}
+h4{
+  font-size: 12px;
+  font-weight: normal;
+
+}
+.user{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.logo{
+  font-size: 45px;
+}
+.on{
+  border: 2px solid red;
+  border-radius: 10%;
+}

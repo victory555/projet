@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types d'Utilisateur</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Liste des types d'utilisateur</h2>
+        <a href="/typeUtilisateur/add" class="btn btn-primary">Ajouter un type d'utilisateur</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Libelle</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% typesUtilisateurs.forEach(typeUtilisateur => { %>
+                    <tr>
+                        <td><%= typeUtilisateur.id %></td>
+                        <td><%= typeUtilisateur.libelle %></td>
+                        <td>
+                            <a href="/typeUtilisateur/edit/<%= typeUtilisateur.id %>" class="btn btn-warning">Modifier</a>
+                            <a href="/typeUtilisateur/delete/<%= typeUtilisateur.id %>" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

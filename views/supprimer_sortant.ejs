@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer Courrier Sortant</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Supprimer le courrier sortant</h2>
+        <p>Êtes-vous sûr de vouloir supprimer ce courrier sortant?</p>
+        <form method="post" action="/sortant/delete/<%= courrier.id %>">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+            <a href="/sortant" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

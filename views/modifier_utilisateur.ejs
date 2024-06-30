@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Utilisateur</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Modifier Utilisateur</h2>
+        <form action="/modifierUtilisateur/<%= utilisateur.id %>" method="post">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" name="nom" value="<%= utilisateur.nom %>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= utilisateur.email %>" required>
+            </div>
+            <div class="form-group">
+                <label for="motDePasse">Mot de passe:</label>
+                <input type="password" class="form-control" id="motDePasse" name="motDePasse" value="<%= utilisateur.motDePasse %>" required>
+            </div>
+            <div class="form-group">
+                <label for="typeUtilisateur">Type d'utilisateur:</label>
+                <input type="text" class="form-control" id="typeUtilisateur" name="typeUtilisateur" value="<%= utilisateur.typeUtilisateur %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter Courrier Entrant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container"  style="  background-color: rgb(235, 224, 212);">
+        <h2>Ajouter un courrier entrant</h2>
+        <form method="post" action="/entrant/add">
+            <div class="form-group">
+                <label>Sujet:</label>
+                <input type="text" name="sujet" class="form-control rounded-pill" required>
+            </div>
+            <div class="form-group">
+                <label>Date de Réception:</label>
+                <input type="date" name="dateReception" class="form-control rounded-pill" required>
+            </div>
+            <div class="form-group">
+                <label>Contenu:</label>
+                <textarea name="contenu" class="form-control rounded-pill" required></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label>Expéditeur:</label>
+                <input type="text" name="expediteur" class="form-control rounded-pill" required>
+            </div>
+            <button type="submit" class="btn btn-success form-control rounded-pill">Ajouter <span class="fas fa-plus"></span></button>
+        </form>
+        <div>
+            <table class="table table-bordered mb-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Sujet</th>
+                        <th>Date de Réception</th>
+                        <th>Expéditeur</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% courriers.forEach(courrier => { %>
+                        <tr>
+                            <td><%= courrier.id %></td>
+                            <td><%= courrier.sujet %></td>
+                            <td><%= courrier.dateReception %></td>
+                            <td><%= courrier.expediteur %></td>
+                            <td>
+                                <a href="/entrant/edit/<%= courrier.id %>" class="btn btn-warning">Modifier</a>
+                                <a href="/entrant/delete/<%= courrier.id %>" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
